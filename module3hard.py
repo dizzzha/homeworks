@@ -24,38 +24,25 @@ print(result)
 
 
 def calculate_structure_sum(*args):
-    s = 0
-    list_ = [*args]
-    for item in list_:
-        if isinstance(item, str):
-            s += len(item)
-        elif isinstance(item, int):
-            s += item
-        elif isinstance(item, set):
-            for value in item:
-                if isinstance(value, str):
-                    s += len(value)
-                elif isinstance(value, int):
-                    s += value
-        elif isinstance(item, list):
-            calculate_structure_sum(*args)
-            for value in item:
-                if isinstance(value, str):
-                    s += len(value)
-                elif isinstance(value, int):
-                    s += value
+    summa = 0
+    for item in args:
+        if isinstance(item, list):
+            for element in item:
+                summa += calculate_structure_sum(element)
         elif isinstance(item, tuple):
-            for value in item:
-                if isinstance(value, str):
-                    s += len(value)
-                elif isinstance(value, int):
-                    s += value
+            for element in item:
+                summa += calculate_structure_sum(element)
+        elif isinstance(item, set):
+            for element in item:
+                summa += calculate_structure_sum(element)
         elif isinstance(item, dict):
-            for key, values in item.items():
-                print(key, values)
-        else:
-            print('DK')
-    return s
+            for key, value in item.items():
+                summa += calculate_structure_sum(key, value)
+        elif isinstance(item, str):
+            summa += len(item)
+        elif isinstance(item, int):
+            summa += item
+    return summa
 
 
 data_structure = [
