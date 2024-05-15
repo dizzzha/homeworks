@@ -6,4 +6,4 @@ def test_function():
 
 
 test_function()
-inner_function() # ошибка связанная с тем, что ф-ция inner_function не определена
+inner_function()  # ошибка связанная с тем, что ф-ция inner_function не определена
