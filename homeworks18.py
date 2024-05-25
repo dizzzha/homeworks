@@ -1,4 +1,4 @@
-class Buiding:
+class Building:
 
     def __init__(self, numberOfFloors, buildingType):
         self.numberOfFloors = numberOfFloors
@@ -8,6 +8,6 @@ class Buiding:
         return self.numberOfFloors == other.numberOfFloors and self.buildingType == other.buildingType
 
 
-first_buiding = Buiding(1, 'hello')
-second_buiding = Buiding(1, 'hello')
-print(first_buiding.__eq__(second_buiding))
+first_building = Building(1, 'hello')
+second_building = Building(1, 'hello')
+print(first_building.__eq__(second_building))
