@@ -8,6 +8,6 @@ class Building:
         return self.numberOfFloors == other.numberOfFloors and self.buildingType == other.buildingType
 
 
-building1 = Building(1, 'hello')
-building2 = Building(1, 'hello')
-print(building1.__eq__(building2))
+first_building = Building(1, 'hello')
+second_building = Building(1, 'hello')
+print(first_building.__eq__(second_building))
