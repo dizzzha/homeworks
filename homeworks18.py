@@ -10,4 +10,4 @@ class Building:
 
 first_building = Building(1, 'hello')
 second_building = Building(1, 'hello')
-print(first_building.__eq__(second_building))
+print(first_building == second_building)
