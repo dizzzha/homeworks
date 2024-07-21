@@ -7,8 +7,7 @@ def get_advanced_writer(file_name):
     def write_everything(*data_set):
         f = open(file_name, 'w', encoding='utf8')
         for i in data_set:
-            f.write(str(i))
-            f.write('\n')
+            f.write(str(f'{i}\n'))
         f.close()
 
     return write_everything
